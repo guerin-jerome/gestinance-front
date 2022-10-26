@@ -1,11 +1,5 @@
-# Version 0.2.0
-
-**ci/cd:**
-
-- SonarCloud
-- Vercel
-- Github Actions
+# Version 0.2.1
 
 **feat:** none.
 
-**fix:** none.
+**fix:** deploy only develop.
