@@ -1,0 +1,45 @@
+.input-text {
+  display: flex;
+  flex-direction: column;
+}
+label,
+input {
+  font-family: 'Roboto', sans-serif;
+}
+label {
+  color: #2d3436;
+  font-weight: 400;
+}
+input {
+  font-weight: 300;
+  padding: 10px 8px;
+  border: 1px solid #b2bec3;
+  border-radius: 4px;
+}
+input:focus,
+input:focus-visible {
+  border-color: #0984e3;
+  outline: 2.5px solid #74b9ffbf;
+}
+input.small {
+  width: 35px;
+}
+input.medium {
+  width: 220px;
+}
+input.large {
+  width: 400px;
+}
+label {
+  padding-bottom: 7.5px;
+}
+label span {
+  padding-left: 3px;
+  color: #d63031;
+}
+.disabled {
+  background-color: #ebebe4;
+}
+.invalid {
+  border: 1.7px solid #d63031;
+}
