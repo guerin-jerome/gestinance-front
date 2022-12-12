@@ -9,6 +9,7 @@ input {
 label {
   color: #2d3436;
   font-weight: 400;
+  padding-bottom: 7.5px;
 }
 input {
   font-weight: 300;
@@ -29,9 +30,6 @@ input.medium {
 }
 input.large {
   width: 400px;
-}
-label {
-  padding-bottom: 7.5px;
 }
 label span {
   padding-left: 3px;

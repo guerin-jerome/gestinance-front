@@ -32,6 +32,7 @@ export const Button = ({
       } ${appearance}`}
       disabled={!!disabled || !!loading}
       type={type}
+      role="button"
       onClick={handleClick}
     >
       {loading ? 'Chargement...' : name}

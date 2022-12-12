@@ -49,6 +49,7 @@ export const TextField = ({
           !!invalid && 'invalid'
         }`}
         type="text"
+        role="textbox"
         disabled={disabled}
         maxLength={maxLength}
         minLength={minLength}

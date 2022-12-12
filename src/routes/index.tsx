@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { AUTHENTICATE_ROUTES } from '../constants';
-import { NotFoundRoute } from '../features/notFound';
+import { AuthenticationRouter } from '../features/authentication/router';
+import { NotFoundContainer } from '../features/notFound';
 
 export const Router = () => {
   const router = createBrowserRouter([
@@ -10,11 +11,11 @@ export const Router = () => {
     },
     {
       path: AUTHENTICATE_ROUTES,
-      element: <div>Authenticate</div>,
+      element: <AuthenticationRouter />,
     },
     {
       path: '*',
-      element: <NotFoundRoute />,
+      element: <NotFoundContainer />,
     },
   ]);
 

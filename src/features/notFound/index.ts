@@ -1,1 +1,1 @@
-export { NotFoundRoute } from './routes';
+export { NotFoundContainer } from './container';

@@ -1,6 +1,5 @@
 import { Button } from '../../../components';
 import { BasicPageProps } from '../../../types/BasicPageProps';
-import './NotFound.css';
 
 export const NotFound = ({ onClick }: BasicPageProps) => {
   return (
