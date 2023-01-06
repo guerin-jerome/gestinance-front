@@ -1,0 +1,32 @@
+.login--form {
+  width: 400px;
+  height: fit-content;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 50%;
+}
+
+.login--form .login--form_title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.login--form .login--form_fields {
+  margin-bottom: 35px;
+}
+
+.login--form .login--form_actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.login--form .login--form_submit {
+  margin-bottom: 20px;
+}
+
+.login--form .login--form_actions__remember-me {
+  margin-bottom: 0;
+}
