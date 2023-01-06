@@ -1,25 +1,23 @@
-import { createBrowserRouter, RouterProvider, Link } from 'react-router-dom'
-import { Login, Register } from '../features/authentication'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import {
+  LoginContainer,
+  RegisterContainer,
+} from '../features/authentication/container'
+import { ProductPage } from '../features/product/ProductPage'
 
 export const Router = () => {
   const router = createBrowserRouter([
     {
       path: '/',
-      element: (
-        <div>
-          <h1>Hello World</h1>
-          <Link to="login">Login</Link>
-          <Link to="register">Register</Link>
-        </div>
-      ),
+      element: <ProductPage />,
     },
     {
       path: '/login',
-      element: <Login />,
+      element: <LoginContainer />,
     },
     {
       path: '/register',
-      element: <Register />,
+      element: <RegisterContainer />,
     },
   ])
 

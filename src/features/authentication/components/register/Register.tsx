@@ -1,10 +1,6 @@
-import { Button, Checkbox, Radio, Input, Typography, Row } from 'antd'
-import {
-  UserOutlined,
-  LockOutlined,
-  PhoneOutlined,
-  MailOutlined,
-} from '@ant-design/icons'
+import { Button, Checkbox, Radio, Input, Typography } from 'antd'
+import { UserOutlined, LockOutlined, PhoneOutlined } from '@ant-design/icons'
+import '../common.css'
 
 const { Title, Paragraph, Link } = Typography
 
