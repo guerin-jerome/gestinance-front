@@ -1,10 +1,15 @@
 import { Button, Checkbox, Radio, Input, Typography } from 'antd'
-import { UserOutlined, LockOutlined, PhoneOutlined } from '@ant-design/icons'
+import { UserOutlined, LockOutlined, MailOutlined } from '@ant-design/icons'
 import '../common.css'
+import { MouseEventHandler } from 'react'
 
 const { Title, Paragraph, Link } = Typography
 
-export const Register = () => {
+export const Register = ({
+  handleClickOtherMode,
+}: {
+  handleClickOtherMode: MouseEventHandler<HTMLElement>
+}) => {
   return (
     <section className="authentication--form">
       <Title className="authentication--form_title" level={3}>
@@ -22,11 +27,7 @@ export const Register = () => {
           <Radio value="email">Email</Radio>
           <Radio value="phone">Phone</Radio>
         </Radio.Group>
-        <Input
-          size="large"
-          placeholder="Phone number"
-          prefix={<PhoneOutlined />}
-        />
+        <Input size="large" placeholder="Email" prefix={<MailOutlined />} />
         <Checkbox>
           I have read and accept the <Link>agreement</Link>
         </Checkbox>
@@ -40,7 +41,7 @@ export const Register = () => {
         Register
       </Button>
       <Paragraph>
-        Or <Link>login now</Link> !
+        Or <Link onClick={handleClickOtherMode}>login now</Link> !
       </Paragraph>
     </section>
   )
