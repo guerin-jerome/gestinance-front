@@ -1,13 +1,24 @@
-import { useNavigate } from 'react-router-dom'
 import { Register } from '../components'
-import { LOGIN_ROUTE } from '../constants'
+import { useRegister } from '../domain/useRegister'
 
 export const RegisterContainer = () => {
-  const navigate = useNavigate()
+  const {
+    errors,
+    isLoading,
+    onClickOtherMode,
+    onSubmit,
+    onChangeValue,
+    onClickAgreement,
+  } = useRegister()
 
-  function onClickOtherMode() {
-    navigate(LOGIN_ROUTE)
-  }
-
-  return <Register handleClickOtherMode={onClickOtherMode} />
+  return (
+    <Register
+      handleClickOtherMode={onClickOtherMode}
+      handleChangeValue={onChangeValue}
+      handleSubmit={onSubmit}
+      handleClickAgreement={onClickAgreement}
+      isLoading={isLoading}
+      fieldsOnError={errors}
+    />
+  )
 }

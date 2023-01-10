@@ -1,13 +1,10 @@
 import { Button, Checkbox, Input, Typography } from 'antd'
 import { UserOutlined, LockOutlined } from '@ant-design/icons'
 import { AuthenticationPage } from '../../types/AuthenticationPage'
-import {
-  FORM_FIELD_PASSWORD,
-  FORM_FIELD_REMEMBER_ME,
-  FORM_FIELD_USERNAME,
-} from '../../constants'
+import { BUTTONS, FORM_FIELDS } from '../../constants'
 import '../common.css'
 import './Login.css'
+import { statusError } from '../../../../utils/form'
 
 const { Title, Paragraph, Link } = Typography
 
@@ -25,24 +22,25 @@ export const Login = ({
       </Title>
       <div className="authentication--form_fields">
         <Input
-          name={FORM_FIELD_USERNAME}
+          name={FORM_FIELDS.username.name}
           size="large"
-          placeholder="Username"
-          prefix={<UserOutlined />}
-          status={fieldsOnError.includes(FORM_FIELD_USERNAME) ? 'error' : ''}
+          placeholder={FORM_FIELDS.username.placeholder}
+          addonBefore={<UserOutlined />}
+          status={statusError(fieldsOnError, FORM_FIELDS.username.name)}
           onChange={handleChangeValue}
         />
         <Input
-          name={FORM_FIELD_PASSWORD}
+          name={FORM_FIELDS.password.name}
           size="large"
-          placeholder="Password"
-          prefix={<LockOutlined />}
-          status={fieldsOnError.includes(FORM_FIELD_PASSWORD) ? 'error' : ''}
+          placeholder={FORM_FIELDS.password.placeholder}
+          type="password"
+          addonBefore={<LockOutlined />}
+          status={statusError(fieldsOnError, FORM_FIELDS.password.name)}
           onChange={handleChangeValue}
         />
       </div>
       <div id="login--form_actions">
-        <Checkbox name={FORM_FIELD_REMEMBER_ME}>Remember me</Checkbox>
+        <Checkbox name={FORM_FIELDS.rememberMe.name}>Remember me</Checkbox>
         <Link>Forgot password</Link>
       </div>
       <Button
@@ -52,7 +50,7 @@ export const Login = ({
         loading={isLoading}
         block
       >
-        Login
+        {BUTTONS.login.libelle}
       </Button>
       <Paragraph>
         Or <Link onClick={handleClickOtherMode}>register now</Link> !

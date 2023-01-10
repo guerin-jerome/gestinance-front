@@ -1,12 +1,9 @@
 import { ChangeEvent, FormEvent, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import {
-  FORM_FIELD_PASSWORD,
-  FORM_FIELD_USERNAME,
-  REGISTER_ROUTE,
-} from '../constants'
+import { FORM_FIELDS, ROUTES } from '../constants'
 import { isBlank, isNotBlank } from '../../../utils/string'
 import { getInputValue } from '../../../utils/form'
+import { HOME_ROUTE } from '../../../constants'
 
 export const useLogin = () => {
   const navigate = useNavigate()
@@ -14,23 +11,25 @@ export const useLogin = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false)
 
   function onClickOtherMode() {
-    navigate(REGISTER_ROUTE)
+    navigate(ROUTES.register)
   }
 
   function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
     const { currentTarget } = event
     setIsLoading(true)
-    let invalidFiels = []
-    if (isBlank(getInputValue(currentTarget, FORM_FIELD_USERNAME)))
-      invalidFiels.push(FORM_FIELD_USERNAME)
-    if (isBlank(getInputValue(currentTarget, FORM_FIELD_PASSWORD)))
-      invalidFiels.push(FORM_FIELD_PASSWORD)
-    setErrors(invalidFiels)
-    setIsLoading(false)
-    if (invalidFiels.length === 0) {
-      navigate('/')
-    }
+    setTimeout(() => {
+      let invalidFiels = []
+      if (isBlank(getInputValue(currentTarget, FORM_FIELDS.username.name)))
+        invalidFiels.push(FORM_FIELDS.username.name)
+      if (isBlank(getInputValue(currentTarget, FORM_FIELDS.password.name)))
+        invalidFiels.push(FORM_FIELDS.password.name)
+      setErrors(invalidFiels)
+      setIsLoading(false)
+      if (invalidFiels.length === 0) {
+        navigate(HOME_ROUTE)
+      }
+    }, 1000)
   }
 
   function onChangeValue(event: ChangeEvent<HTMLInputElement>) {

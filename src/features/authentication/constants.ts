@@ -1,10 +1,53 @@
 /** Part: Routes */
 
-export const REGISTER_ROUTE = '/register'
-export const LOGIN_ROUTE = '/login'
+export const ROUTES = {
+  login: '/login',
+  register: '/register',
+}
 
-/** Part: Login */
+/** Part: Form */
 
-export const FORM_FIELD_USERNAME = 'username'
-export const FORM_FIELD_PASSWORD = 'password'
-export const FORM_FIELD_REMEMBER_ME = 'rememberMe'
+export const FORM_FIELDS = {
+  username: {
+    name: 'username',
+    placeholder: 'Username',
+  },
+  password: {
+    name: 'password',
+    placeholder: 'Password',
+  },
+  rememberMe: {
+    name: 'rememberMe',
+  },
+  email: {
+    name: 'email',
+    placeholder: 'Email',
+  },
+  phone: {
+    name: 'phone',
+    placeholder: 'Phone',
+  },
+  retapePassword: {
+    name: 'retapePassword',
+    placeholder: 'Retape password',
+  },
+  agreement: {
+    name: 'agreement',
+  },
+  channelOfCommunication: {
+    name: 'channelOfCommunication',
+  },
+}
+
+export const BUTTONS = {
+  login: {
+    libelle: 'Login',
+  },
+  register: {
+    libelle: 'Register',
+  },
+}
+
+/** Part: Error */
+
+export const PASSWORD_NOT_EQUAL = 'passwordNotEqual'
